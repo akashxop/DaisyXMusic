@@ -27,8 +27,12 @@ async def inline(client: Client, query: InlineQuery):
             answers.append(
                 InlineQueryResultArticle(
                     title=result["title"],
-                    description="{}, {} views.".format(result["duration"], result["viewCount"]["short"]),
-                    input_message_content=InputTextMessageContent("https://www.youtube.com/watch?v={}".format(result["id"])),
+                    description="{}, {} views.".format(
+                        result["duration"], result["viewCount"]["short"]
+                    ),
+                    input_message_content=InputTextMessageContent(
+                        "https://www.youtube.com/watch?v={}".format(result["id"])
+                    ),
                     thumb_url=result["thumbnails"][0]["url"],
                 )
             )
